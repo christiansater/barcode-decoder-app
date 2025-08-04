@@ -1,3 +1,4 @@
 streamlit
 pyzbar
 Pillow
+pillow-heif
