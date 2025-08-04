@@ -1,1 +1,3 @@
 libzbar0
+libheif1
+libde265-0
