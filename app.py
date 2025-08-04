@@ -2,6 +2,7 @@ import streamlit as st
 from pyzbar.pyzbar import decode
 from PIL import Image
 from io import BytesIO
+import pillow_heif  # Import to register HEIF/HEIC support
 
 # Function to detect and decode barcodes
 def decode_barcodes(image):
@@ -18,7 +19,7 @@ st.title("Multi-Barcode Decoder App")
 
 st.write("Upload an image containing one or more barcodes to decode them.")
 
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "bmp", "gif", "webp"])
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "bmp", "gif", "webp", "heic", "heif"])
 
 if uploaded_file is not None:
     try:
@@ -39,4 +40,4 @@ if uploaded_file is not None:
             st.warning("No barcodes detected in the image.")
     except Exception as e:
         st.error(f"Error processing the image: {e}")
-        st.error("Please ensure you've uploaded a valid image file (e.g., JPG, PNG) and try again. If the issue persists, try a different image or check if the file opens correctly on your device.")
+        st.error("Please ensure you've uploaded a valid image file (e.g., JPG, PNG, HEIC) and try again. If the issue persists, try a different image or check if the file opens correctly on your device.")
