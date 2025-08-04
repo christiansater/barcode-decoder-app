@@ -2,3 +2,5 @@ streamlit
 pyzbar
 Pillow
 pillow-heif
+pandas
+openpyxl
